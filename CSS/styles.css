@@ -27,7 +27,7 @@
 .container{
     display: grid;
     grid-template-rows: 5rem 1fr 5rem;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 150px 1fr;
     grid-template-areas: 
         'h h h'
         's m m'
@@ -53,25 +53,28 @@
     background-color: #232136;
 }
 
-footer{
-    grid-area: f;
-    background-color: #2a273f;
-}
-
 .top{
     display: flex;
     flex-direction: row;
+    text-align: center;
+    justify-content: right;
+}
+
+nav li{
+    font-size: 3rem;
+    list-style-type: none;
+    margin-right: 3rem;
+}
+
+footer{
+    grid-area: f;
+    background-color: #2a273f;
 }
 
 h1 {
     font-size: 4rem;
 }
 
-li{
-    font-size: 3rem;
-    list-style-type: none;
-    margin-right: 3rem;
-}
 
 p{
     font-size: 1.5rem;
@@ -83,7 +86,7 @@ p{
     }
 
     p {
-        font-size: 5rem;
+        font-size: 1.5rem;
     }
 
     h1{
