@@ -12,12 +12,15 @@
     #9ccfd8 foam
     #c4a7e7 iris
 */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
 
 h1 {
     background-color: #2a273f;
 }
 
 * {
+    font-family: 'Raleway', sans-serif;
     background-color: #232123;
     color: #e0def4;
 }
