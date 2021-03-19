@@ -49,13 +49,20 @@ padding: 1rem;
 }
 
 .sidenav{
-    grid-area: s;
+    grid-area: s;    
     background-color: #393552;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
 }
 
 .main{
     grid-area: m;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     background-color: #232136;
 }
 
@@ -119,9 +126,6 @@ li a{
     font-style: italic;
     border: 0;
     background-color:transparent;
-    display: flex;
-    flex-direction: row;
-    align-items:stretch;
 }
 .closeSide:hover{
     background-color: rgba(0, 0, 0, 0.125);
