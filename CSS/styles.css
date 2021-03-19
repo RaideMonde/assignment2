@@ -13,8 +13,12 @@
     #c4a7e7 iris
 */
 
-
+h1 {
+    background-color: #2a273f;
+}
 
 * {
     background-color: #232123;
+    color: #e0def4;
 }
+
