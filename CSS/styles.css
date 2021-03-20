@@ -91,25 +91,19 @@ li a{
 
 button{
     background-color:transparent;
-    margin: 1rem;
+    padding: 1rem;
     border: 5px;
     font-size: 2.5rem;
 }
 button:hover{
     background-color: rgba(0, 0, 0, 0.125);
-    padding: 0 .5rem .5rem 0;
 }
 button:active {
     background-color: rgba(0, 0, 0, .5);
 }
 
-.save{
-    border-color: black;
-}
-
-
 textarea{
-    background-color:#817c9c;
+    background-color:#9ccfd8;
     font-size: 2rem;
     color: black;
     margin: 3rem;
