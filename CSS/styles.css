@@ -60,9 +60,6 @@ padding: 1rem;
 
 .main{
     grid-area: m;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
     background-color: #232136;
 }
 
@@ -79,7 +76,7 @@ footer{
     flex-direction: row;
     background-color: #2a273f;
     justify-content: space-evenly;
-    padding-top: 10px;
+    padding-top: 1rem;
 }
 
 nav li {
@@ -92,47 +89,30 @@ li a{
     font-size: 2rem;
 }
 
-.create{
+button{
     background-color:transparent;
-    border: 0;
+    margin: 1rem;
+    border: 5px;
     font-size: 2.5rem;
-    font-style: italic;
 }
-
-.create:hover{
+button:hover{
     background-color: rgba(0, 0, 0, 0.125);
     padding: 0 .5rem .5rem 0;
 }
-.create:active {
+button:active {
     background-color: rgba(0, 0, 0, .5);
 }
 
-.openSide{
-    background-color:transparent;
-    border: 0;
-    font-size: 2.5rem;
-    font-style: italic;
-}
-.openSide:hover{
-    background-color: rgba(0, 0, 0, 0.125);
-    padding: 0 .5rem .5rem 0;
-}
-.openSide:active {
-    background-color: rgba(0, 0, 0, .5);
+.save{
+    border-color: black;
 }
 
-.closeSide{
-    font-size: 2.5rem;
-    font-style: italic;
-    border: 0;
-    background-color:transparent;
-}
-.closeSide:hover{
-    background-color: rgba(0, 0, 0, 0.125);
-    padding: 0 .5rem .5rem 0;
-}
-.closeSide:active {
-    background-color: rgba(0, 0, 0, .5);
+
+textarea{
+    background-color:#817c9c;
+    font-size: 2rem;
+    color: black;
+    margin: 3rem;
 }
 
 h1 {
