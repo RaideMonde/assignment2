@@ -1,16 +1,16 @@
 /*
-    #232136 base
-    #2a273f surface
-    #393552 overlay
-    #59546d inactive
-    #817c9c subtle
-    #e0def4 text
-    #eb6f92 love
-    #f6c177 gold
-    #ea9a97 rose
-    #3e8fb0 pine
-    #9ccfd8 foam
-    #c4a7e7 iris
+#232136 base
+#2a273f surface
+#393552 overlay
+#59546d inactive
+#817c9c subtle
+#e0def4 text
+#eb6f92 love
+#f6c177 gold
+#ea9a97 rose
+#3e8fb0 pine
+#9ccfd8 foam
+#c4a7e7 iris
 */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 
@@ -29,9 +29,9 @@
     grid-template-rows: 3rem 1fr 5rem;
     grid-template-columns: 150px 1fr;
     grid-template-areas: 
-        'h h h'
-        's m m'
-        'f f f';
+    'h h h'
+    's m m'
+    'f f f';
     width: 100vw;
     height: 100vh;
     background-color: #2a273f;
@@ -43,9 +43,9 @@
 }
 
 .side{
-grid-area: s;
-background-color: #232136;
-padding: 1rem;
+    grid-area: s;
+    background-color: #232136;
+    padding: 1rem;
 }
 
 .sidenav{
@@ -61,6 +61,9 @@ padding: 1rem;
 .main{
     grid-area: m;
     background-color: #232136;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 250px);
 }
 
 .top{
@@ -107,6 +110,8 @@ textarea{
     font-size: 2rem;
     color: black;
     margin: 3rem;
+    height: 180px;
+    width: 400px;
 }
 
 h1 {
@@ -118,14 +123,23 @@ p{
 }
 
 @media screen and (max-width: 375px) {
-    .container{
-        background-color: #3e8fb0;
+    .main{
+        grid-area: m;
+        background-color: #232136;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 200px);
     }
-
-    p {
-        font-size: 1.5rem;
+    
+    textarea{
+        background-color:#9ccfd8;
+        font-size: 2rem;
+        color: black;
+        margin: 3rem;
+        width: 150px;
+        height: 150px;
     }
-
+    
     h1{
         font-size: 4rem;
     }
