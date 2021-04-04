@@ -1,2 +1,2 @@
-# assignment_1
-This is for assignment 1
+# assignment2
+This is for assignment 2
