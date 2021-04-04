@@ -130,6 +130,16 @@ p{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 200px);
     }
+
+    .container{
+        display: grid;
+        grid-template-rows: 3rem 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        'h h'
+        's m'
+        'f f';
+    }
     
     textarea{
         background-color:#9ccfd8;
@@ -138,10 +148,6 @@ p{
         margin: 3rem;
         width: 150px;
         height: 150px;
-    }
-    
-    h1{
-        font-size: 4rem;
     }
 }
 
