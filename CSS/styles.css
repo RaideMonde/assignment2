@@ -1,4 +1,5 @@
 /*
+DARK MODE
 #232136 base
 #2a273f surface
 #393552 overlay
@@ -14,6 +15,15 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 
+:root{
+    --base: #232136;
+    --surface: #2a273f; 
+    --overlay: #393552;
+    --inactive: #59546d; 
+    --subtle: #817c9c; 
+    --text: #e0def4; 
+    --textarea: #9ccfd8;
+}
 
 
 * {
@@ -21,7 +31,7 @@
     padding: 0;
     font-size: 10px;
     font-family: 'Raleway', sans-serif;
-    color: #e0def4;
+    color: var(--text);
 }
 
 .container{
@@ -34,23 +44,23 @@
     'f f f';
     width: 100vw;
     height: 100vh;
-    background-color: #2a273f;
+    background-color: var(--surface);
 }
 
 .header{
     grid-area: h;
-    background-color: #2a273f;
+    background-color: var(--surface);
 }
 
 .side{
     grid-area: s;
-    background-color: #232136;
+    background-color: var(--base);
     padding: 1rem;
 }
 
 .sidenav{
     grid-area: s;    
-    background-color: #393552;
+    background-color: var(--overlay);
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -60,7 +70,7 @@
 
 .main{
     grid-area: m;
-    background-color: #232136;
+    background-color: var(--base);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 250px);
@@ -77,7 +87,7 @@ footer{
     grid-area: f;
     display: flex;
     flex-direction: row;
-    background-color: #2a273f;
+    background-color: var(--surface);
     justify-content: space-evenly;
     padding-top: 1rem;
 }
@@ -106,7 +116,7 @@ button:active {
 }
 
 textarea{
-    background-color:#9ccfd8;
+    background-color: var(--textarea);
     font-size: 2rem;
     color: black;
     margin: 3rem;
@@ -125,12 +135,12 @@ p{
 @media screen and (max-width: 375px) {
     .main{
         grid-area: m;
-        background-color: #232136;
+        background-color: var(--base);
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 200px);
     }
-
+    
     .container{
         display: grid;
         grid-template-rows: 3rem 1fr;
@@ -142,7 +152,6 @@ p{
     }
     
     textarea{
-        background-color:#9ccfd8;
         font-size: 2rem;
         color: black;
         margin: 3rem;
