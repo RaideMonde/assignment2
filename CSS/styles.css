@@ -1,5 +1,4 @@
 /*
-DARK MODE
 #232136 base
 #2a273f surface
 #393552 overlay
@@ -15,15 +14,6 @@ DARK MODE
 */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 
-:root{
-    --base: #232136;
-    --surface: #2a273f; 
-    --overlay: #393552;
-    --inactive: #59546d; 
-    --subtle: #817c9c; 
-    --text: #e0def4; 
-    --textarea: #9ccfd8;
-}
 
 
 * {
@@ -31,7 +21,7 @@ DARK MODE
     padding: 0;
     font-size: 10px;
     font-family: 'Raleway', sans-serif;
-    color: var(--text);
+    color: #e0def4;
 }
 
 .container{
@@ -44,23 +34,23 @@ DARK MODE
     'f f f';
     width: 100vw;
     height: 100vh;
-    background-color: var(--surface);
+    background-color: #2a273f;
 }
 
 .header{
     grid-area: h;
-    background-color: var(--surface);
+    background-color: #2a273f;
 }
 
-.side{
+/* .side{
     grid-area: s;
-    background-color: var(--base);
+    background-color: #232136;
     padding: 1rem;
-}
+} */
 
 .sidenav{
     grid-area: s;    
-    background-color: var(--overlay);
+    background-color: #393552;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -70,7 +60,7 @@ DARK MODE
 
 .main{
     grid-area: m;
-    background-color: var(--base);
+    background-color: #232136;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 250px);
@@ -87,7 +77,7 @@ footer{
     grid-area: f;
     display: flex;
     flex-direction: row;
-    background-color: var(--surface);
+    background-color: #2a273f;
     justify-content: space-evenly;
     padding-top: 1rem;
 }
@@ -102,10 +92,15 @@ li a{
     font-size: 2rem;
 }
 
+.note-area{
+    margin: 10px;
+    max-width: 500px;
+}
+
 button{
     background-color:transparent;
     padding: 1rem;
-    border: 5px;
+    border: none;
     font-size: 2.5rem;
 }
 button:hover{
@@ -115,8 +110,13 @@ button:active {
     background-color: rgba(0, 0, 0, .5);
 }
 
+.buttons{
+    display: flex;
+    justify-content: flex-start;
+}
+
 textarea{
-    background-color: var(--textarea);
+    background-color:#9ccfd8;
     font-size: 2rem;
     color: black;
     margin: 3rem;
@@ -135,23 +135,31 @@ p{
 @media screen and (max-width: 375px) {
     .main{
         grid-area: m;
-        background-color: var(--base);
+        background-color: #232136;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 200px);
-    }
-    
-    .container{
-        display: grid;
-        grid-template-rows: 3rem 1fr;
-        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 5rem 8rem 1fr 5rem;
         grid-template-areas: 
         'h h'
-        's m'
+        's s'
+        'm m'
         'f f';
+    }
+
+    .side {
+        display: flex;
+        justify-content: center;
+    }
+
+    .note-area{
+        max-width: 100vw;
+    }
+
+    .buttons{
+        justify-content: center;
     }
     
     textarea{
+        background-color:#9ccfd8;
         font-size: 2rem;
         color: black;
         margin: 3rem;
