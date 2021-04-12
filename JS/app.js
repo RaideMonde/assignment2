@@ -1,12 +1,15 @@
 
 // This is where notes will go, stored as a note object, returns a note
 const notesArray = []
+// This tracks the theme 
+var theme = 'dark'
 // This is a note object, it contains a title and a body
 const note = 
 {
     title: "title",
     body: "body"
 }
+
 
 function defineNoteWritingSection(){
     html = `
@@ -56,7 +59,6 @@ function convertDivsToString(){
 function cleanUp(){
     const div = document.querySelector('#note-area')
     div.remove()
-    
 }
 
 function defineCreateNoteSection(){
@@ -68,6 +70,57 @@ function defineCreateNoteSection(){
     return html
 }
 
+function displayNotes(){
+    var result= ""
+    notesArray.forEach(function (item){
+        result += "<li>" + item.title
+    })
+    document.getElementById("notes").innerHTML = result
+}
+
+function setTheme(themeName) {
+    localStorage.setItem('theme', themeName)
+    document.documentElement.className = themeName
+}
+
+function toggleTheme(){
+    if(localStorage.getItem('theme') === 'theme-dark'){
+        setTheme('theme-light')
+    } else {
+        setTheme('theme-dark')
+    }
+}
+
+(function(){
+    if (localStorage.getItem('theme') === 'theme-dark'){
+        setTheme('theme-dark')
+    } else {
+        setTheme('theme-light')
+    }
+})()
+
+// function colorMode(){
+//     if (theme == 'dark'){
+//         document.documentElement.style.setProperty('--base', '#232136')
+//         document.documentElement.style.setProperty('--surface', '#2a273f')
+//         document.documentElement.style.setProperty('--overlay', '#393552')
+//         document.documentElement.style.setProperty('--inactive', '#59546d')
+//         document.documentElement.style.setProperty('--subtle', '#817c9c')
+//         document.documentElement.style.setProperty('--text', '#e0def4')
+//         document.documentElement.style.setProperty('--textarea', '#9ccfd8')
+//         theme = 'light'
+//     } else{
+//         document.documentElement.style.setProperty('--base', '#232136')
+//         document.documentElement.style.setProperty('--surface', '#2a273f')
+//         document.documentElement.style.setProperty('--overlay', '#393552')
+//         document.documentElement.style.setProperty('--inactive', '#59546d' )
+//         document.documentElement.style.setProperty('--subtle', '#817c9c')
+//         document.documentElement.style.setProperty('--text', '#e0def4')
+//         document.documentElement.style.setProperty('--textarea', '#9ccfd8' )
+//         theme = 'dark'
+//     }
+// }
+
 
 /*
 This should be a function to add darkmode
@@ -77,23 +130,5 @@ ColorScheme {
     switch to dark
     else: 
     switch to light
-}
-*/
-
-
-/*
-This should pop up the note section
-NewNote {
-    brings up the note area
-    brings up save/cancel button
-}
-*/
-
-
-/*
-This should display notes
-DisplayNotes {
-    Loops through notes and prints out each heading
-    decontstructs note
 }
 */

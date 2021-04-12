@@ -14,7 +14,7 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 
-:root{
+.theme-dark{
     --base: #232136;
     --surface: #2a273f; 
     --overlay: #393552;
@@ -24,12 +24,22 @@
     --textarea: #9ccfd8;
 }
 
+.theme-light{    
+    --base: #faf4ed;
+    --surface: #fffaf3; 
+    --overlay: #f2e0de;
+    --inactive: #9893a5; 
+    --subtle: #6e6a86; 
+    --text: #575279; 
+    --textarea: #56949f;
+}
+
 * {
     margin: 0;
     padding: 0;
     font-size: 10px;
     font-family: 'Raleway', sans-serif;
-    color: #e0def4;
+    color: var(--text);
 }
 
 .container{
@@ -41,18 +51,18 @@
     'f f f';
     width: 100vw;
     height: 100vh;
-    background-color: #2a273f;
+    background-color: var(--surface);
 }
 
 .header{
     grid-area: h;
-    background-color: #2a273f;
+    background-color: var(--surface);
 }
 
 
-.sidenav{
+.side{
     grid-area: s;    
-    background-color: #393552;
+    background-color: var(--overlay);
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -62,7 +72,7 @@
 
 .main{
     grid-area: m;
-    background-color: #232136;
+    background-color: var(--base);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 250px);
@@ -79,7 +89,7 @@ footer{
     grid-area: f;
     display: flex;
     flex-direction: row;
-    background-color: #2a273f;
+    background-color: var(--surface);
     justify-content: space-evenly;
     padding-top: 1rem;
 }
@@ -141,7 +151,7 @@ button:active {
 }
 
 textarea{
-    background-color:#9ccfd8;
+    background-color: var(--textarea);
     font-size: 2rem;
     color: black;
     margin: 3rem;
@@ -160,7 +170,7 @@ p{
 @media screen and (max-width: 375px) {
     .main{
         grid-area: m;
-        background-color: #232136;
+        background-color: var(--base);
         display: grid;
         grid-template-rows: 5rem 8rem 1fr 5rem;
         grid-template-areas: 
@@ -184,7 +194,7 @@ p{
     }
     
     textarea{
-        background-color:#9ccfd8;
+        background-color:var(--textarea);
         font-size: 2rem;
         color: black;
         margin: 3rem;
