@@ -1,9 +1,5 @@
-
-// This is where notes will go, stored as a note object, returns a note
 const notesArray = []
-// This tracks the theme 
-var theme = 'dark'
-// This is a note object, it contains a title and a body
+const theme = 'dark'
 const note = 
 {
     title: "title",
@@ -33,7 +29,6 @@ function setCursor(){
 }
 
 
-// This should save and store the note and remove the note taking area
 function saveNote(){
     const div = document.querySelector('#note')
     const title = div.firstChild.textContent
@@ -61,21 +56,11 @@ function cleanUp(){
     div.remove()
 }
 
-function defineCreateNoteSection(){
-    html = `
-    <div>
-        <span onclick="createContentWritingArea()"> +Create a new note</span>
-    </div>
-    `
-    return html
-}
-
 function displayNotes(){
-    var result= ""
-    notesArray.forEach(function (item){
-        result += "<li>" + item.title
-    })
-    document.getElementById("notes").innerHTML = result
+    result = ''
+    for (var note in notesArray){
+        notes += "<li>" + note.title + "</li>";
+    }
 }
 
 function setTheme(themeName) {
@@ -98,37 +83,3 @@ function toggleTheme(){
         setTheme('theme-light')
     }
 })()
-
-// function colorMode(){
-//     if (theme == 'dark'){
-//         document.documentElement.style.setProperty('--base', '#232136')
-//         document.documentElement.style.setProperty('--surface', '#2a273f')
-//         document.documentElement.style.setProperty('--overlay', '#393552')
-//         document.documentElement.style.setProperty('--inactive', '#59546d')
-//         document.documentElement.style.setProperty('--subtle', '#817c9c')
-//         document.documentElement.style.setProperty('--text', '#e0def4')
-//         document.documentElement.style.setProperty('--textarea', '#9ccfd8')
-//         theme = 'light'
-//     } else{
-//         document.documentElement.style.setProperty('--base', '#232136')
-//         document.documentElement.style.setProperty('--surface', '#2a273f')
-//         document.documentElement.style.setProperty('--overlay', '#393552')
-//         document.documentElement.style.setProperty('--inactive', '#59546d' )
-//         document.documentElement.style.setProperty('--subtle', '#817c9c')
-//         document.documentElement.style.setProperty('--text', '#e0def4')
-//         document.documentElement.style.setProperty('--textarea', '#9ccfd8' )
-//         theme = 'dark'
-//     }
-// }
-
-
-/*
-This should be a function to add darkmode
-ColorScheme {
-    Checks Color scheme
-    if light:
-    switch to dark
-    else: 
-    switch to light
-}
-*/
