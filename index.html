@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/styles.css">
+    <script defer src="JS/app.js"></script>
     <title>Index</title>
 </head>
 <body>
@@ -22,11 +23,12 @@
         </nav>
         
         <div class="main">
-            <div>
-                <button class="create" type="button">
-                    + Create a new note
-                </button>
+            <div id="create">
+                <span onclick="createContentWritingArea()"> +Create a new note</span>
             </div>
+            <div id="content"></div>
+            <div id="view-note"></div>
+            
         </div>
         <footer>
             <small>Owned and operated by &copy; RaiDeMonde </small>
