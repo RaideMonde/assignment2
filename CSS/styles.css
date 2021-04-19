@@ -32,6 +32,7 @@
     background-color: var(--surface);
     display: grid;
     grid-template-columns: minmax(0ppx, auto) 1fr;
+    grid-template-rows: 50px 1fr 50px;
     grid-template-areas: 
     'h h'
     's m'
@@ -50,6 +51,10 @@
     grid-area: s;
     background-color: var(--overlay);
     padding: 40px;
+}
+
+.side h1{
+    font-size: 3rem;
 }
 
 .main{

@@ -18,7 +18,7 @@ function defineNoteWritingSection(){
         <button onclick="saveNote()">save</button>
         <button onclick="cleanUp()">cancel</button>
     </div>
-    `    
+    `
     return html
 }
 
@@ -62,10 +62,12 @@ function cleanUp(){
 
 window.addEventListener('load', createNoteList(notesArray))
 
+const noteList = document.querySelector('#notes-list')
+
 function noteListTemplate(title){
     html = `
     <li>
-    $title
+        ${title}
     </li>
     `
     return html
@@ -77,6 +79,11 @@ function createNoteList(arr){
         noteDiv.insertAdjacentHTML('beforeend', noteListTemplate(note.title))
     }
 }
+
+noteList.addEventListener('click', (e) =>{
+    const title = e.target
+    console.log(title)
+})
 
 function setTheme(themeName) {
     localStorage.setItem('theme', themeName)
