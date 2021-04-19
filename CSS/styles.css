@@ -1,17 +1,3 @@
-/*
-#232136 base
-#2a273f surface
-#393552 overlay
-#59546d inactive
-#817c9c subtle
-#e0def4 text
-#eb6f92 love
-#f6c177 gold
-#ea9a97 rose
-#3e8fb0 pine
-#9ccfd8 foam
-#c4a7e7 iris
-*/
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 
 .theme-dark{
@@ -43,15 +29,15 @@
 }
 
 .container{
-    display: grid;
-    grid-template-columns: 150px;
-    grid-template-areas: 
-    'h h h'
-    's m m'
-    'f f f';
-    width: 100vw;
-    height: 100vh;
     background-color: var(--surface);
+    display: grid;
+    grid-template-columns: minmax(0ppx, auto) 1fr;
+    grid-template-areas: 
+    'h h'
+    's m'
+    'f f';
+    height: 100vh;
+    width: 100vw;
 }
 
 .header{
@@ -61,21 +47,15 @@
 
 
 .side{
-    grid-area: s;    
+    grid-area: s;
     background-color: var(--overlay);
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 2rem;
+    padding: 40px;
 }
 
 .main{
     grid-area: m;
     background-color: var(--base);
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 250px);
 }
 
 .top{

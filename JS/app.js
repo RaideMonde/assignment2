@@ -1,4 +1,8 @@
-const notesArray = []
+const notesArray = [
+    {title: "note one", body:"this is a note"},
+    {title: "note two", body:"this is the second note"},
+    {title: "note three", body:"this is the third note"}
+]
 const theme = 'dark'
 const note = 
 {
@@ -56,10 +60,17 @@ function cleanUp(){
     div.remove()
 }
 
-function displayNotes(){
-    result = ''
-    for (var note in notesArray){
-        notes += "<li>" + note.title + "</li>";
+window.addEventListener('load', createNoteList(notesArray))
+
+function noteListTemplate(title){
+    html = '<li>$title</li>'
+    return html
+}
+
+function createNoteList(arr){
+    const noteDiv = document.querySelector("#notes-list")
+    for (const note of arr){
+        noteDiv.insertAdjacentElement('beforeend', noteListTemplate(note.title))
     }
 }
 
