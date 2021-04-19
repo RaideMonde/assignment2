@@ -63,14 +63,18 @@ function cleanUp(){
 window.addEventListener('load', createNoteList(notesArray))
 
 function noteListTemplate(title){
-    html = '<li>$title</li>'
+    html = `
+    <li>
+    $title
+    </li>
+    `
     return html
 }
 
 function createNoteList(arr){
     const noteDiv = document.querySelector("#notes-list")
     for (const note of arr){
-        noteDiv.insertAdjacentElement('beforeend', noteListTemplate(note.title))
+        noteDiv.insertAdjacentHTML('beforeend', noteListTemplate(note.title))
     }
 }
 
