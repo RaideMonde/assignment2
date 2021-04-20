@@ -3,12 +3,6 @@ const notesArray = [
     {title: "note two", body:"this is the second note"},
     {title: "note three", body:"this is the third note"}
 ]
-const theme = 'dark'
-const note = 
-{
-    title: "title",
-    body: "body"
-}
 
 
 function defineNoteWritingSection(){
@@ -80,9 +74,31 @@ function createNoteList(arr){
     }
 }
 
+function displayNote(title, arr){
+    return note = arr.find(n => n.title == title)
+}
+
+function removeNote(){
+    const note = document.querySelector('#note')
+    note.remove()
+}
+
+function displayNoteTemplate(note) {
+    const { title, body } = note
+    return html = `
+    <div id="note"> 
+        <h2>${title}</h2>
+        <p>${body}</p>
+        <button onclick="removeNote()">close</button>
+    </div>
+    `
+}
+
 noteList.addEventListener('click', (e) =>{
-    const title = e.target
-    console.log(title)
+    const noteDisplayArea = document.querySelector('#view-note')
+    const title = e.target.textContent
+    const note = displayNote(title, notesArray)
+    noteDisplayArea.insertAdjacentHTML('beforeend', displayNoteTemplate(note))
 })
 
 function setTheme(themeName) {
